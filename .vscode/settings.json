@@ -1,0 +1,9 @@
+{
+    "git.allowNoVerifyCommit": true,
+    "git.enableCommitSigning": true,
+    "git.enableSmartCommit": true,
+    "git.fetchOnPull": true,
+    "git.ignoreLimitWarning": true,
+    "git.ignoreMissingGitWarning": true,
+    "git.ignoreLegacyWarning": true
+}
