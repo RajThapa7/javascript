@@ -15,3 +15,4 @@ function facto(){
   };
   document.getElementById("demo").innerHTML = `Factorial is ${factorial(num)} `;
   }
+

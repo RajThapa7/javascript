@@ -5,5 +5,12 @@
     "git.fetchOnPull": true,
     "git.ignoreLimitWarning": true,
     "git.ignoreMissingGitWarning": true,
-    "git.ignoreLegacyWarning": true
+    "git.ignoreLegacyWarning": true,
+    "search.useGlobalIgnoreFiles": true,
+    "git.allowForcePush": true,
+    "git.alwaysShowStagedChangesResourceGroup": true,
+    "git.alwaysSignOff": true,
+    "git.autoStash": true,
+    "git.followTagsWhenSync": true,
+    "git.ignoreRebaseWarning": true
 }
