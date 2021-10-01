@@ -6,11 +6,11 @@
 </head>
 <body>
    <p>Caesar Cipher</p>  
-   <input type = "text" id="input" placeholder= "Enter the text"><br>
-<button type="button"> Encrypt</button>
-<button type="button"> Decrypt</button><br><br>
-<input type  = "text" disabled id = "output" placeholder=" output will be here">
-
+   <input type = "text" id="Input" placeholder= "Enter the text">
+   <input type = "number" id = "Key" placeholder = "Enter the Key" min ="0"><br><br>
+<button type="button" onclick = "encrypt()"> Encrypt</button>
+<button type="button" > Decrypt</button><br><br>
+<input id = "output" type = "text" placeholder="Output will be here"> </input>
 <script src = "cipher.js"> 
 </script>
 </body>
