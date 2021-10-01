@@ -2,15 +2,21 @@
 <html>
 
 <head>
+  <link rel = "stylesheet" type = "text/css" href = "cipher.css">
     <title>Encryption and Decryption </title> 
 </head>
 <body>
-   <p>Caesar Cipher</p>  
-   <input type = "text" id="Input" placeholder= "Enter the text">
-   <input type = "number" id = "Key" placeholder = "Enter the Key" required ><br><br>
-<button type="button" onclick = "encrypt()"> Encrypt</button>
-<button type="button" onclick = "decrypt()" > Decrypt</button><br><br>
-<input id = "output" type = "text" placeholder="Output will be here"> </input>
+    <div id="container-outer">
+   <p id="first">Caesar Cipher</p>  
+   <div id = "container-inner">
+   Enter text: <br><input type = "text" id="Input" placeholder= "Enter the text"><br>
+   Enter Key: <br><input type = "number" id = "Key" placeholder = "Enter the Key" required ><br><br>
+<button type="button" onclick = "encrypt()" id="en"> Encrypt</button>
+<button type="button" onclick = "decrypt()" id="de"> Decrypt</button><br><br>
+<input id = "output" type = "text" placeholder="Output will be here" disabled> </input>
+</div>
+</div>
+
 <script src = "cipher.js"> 
 </script>
 </body>
