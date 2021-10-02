@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <h4> Random number generator using Linear Congruential Method</h4>
+        <p> Enter the value of the initial number Xo</p>
+        <input type="text" id="x" placeholder="Xo">
+        <p> Enter the value of the a </p>
+        <input type="text" id="a" placeholder="a">
+        <p> Enter the value of the C</p>
+        <input type="text" id="c" placeholder="c">
+        <p> Enter the value of the modulus m</p>
+        <input type="text" id="m" placeholder="m">
+        <p> Provide the number of Random Numbers to generate</p>
+        <input type="text" id="n" placeholder="number">
+        <br><br>
+        <button type = "button" onclick="lcm()"> Generate </button>
+        <p id= "output"> </p>
+
+        <script>
+            function lcm(){
+                // initializing array X and first value as x0
+                let x = [parseInt(document.getElementById('x').value)];
+                let a = parseInt(document.getElementById('a').value);
+                let c = parseInt(document.getElementById('c').value);
+                let m = parseInt(document.getElementById('m').value);
+                let n = parseInt(document.getElementById('n').value);
+
+                
+                //using LCM formula and storing the value in array x
+                for(let i =1; i<n; i++){
+                    x[i] = ((a*x[i-1]) + c) % m ;
+                }
+                document.getElementById("output").innerHTML = x;
+            
+            }
+        </script>
+    </body>
+</html>

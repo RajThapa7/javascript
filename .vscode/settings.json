@@ -12,5 +12,8 @@
     "git.alwaysSignOff": true,
     "git.autoStash": true,
     "git.followTagsWhenSync": true,
-    "git.ignoreRebaseWarning": true
+    "git.ignoreRebaseWarning": true,
+    "cSpell.words": [
+        "Congruential"
+    ]
 }
