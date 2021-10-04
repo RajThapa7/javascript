@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+    table, tr, td{
+        border-collapse: collapse;
+        border: none;
+    }
+    td{
+        padding: 5px;
+
+    }
+    input[type = "button"]{
+        border-radius: 40px;
+        border: none;
+        padding: 20px;
+        font-size: 1.3em;
+        background-color: #666363;
+        color: white;
+    }
+    input[type= "button"]:hover{
+        transform : scale(1.03);
+    }
+    #outer{
+        border: 1px solid black;
+        width: 25.5%;
+        text-align: center;
+                margin: 0px auto;
+                padding: 5px;
+                border-radius: 20px;
+                background-color: rgb(48, 44, 44);
+
+    }
+    table{
+        border-spacing:5px;
+        margin: 0px auto;
+        
+    }
+    #output{
+        width: 97%;
+        height: 50px;
+        border-radius:10px;
+        font-size: 1.8em;
+        border: none;
+        
+        /* background-color: rgb(48, 44, 44); */
+    }
+    
+    td #operator, #calc{
+        background-color: rgba(247, 170, 29, 0.89);
+    }
+    
+</style>
+</head>
+<body>
+    <div id= "outer">
+    <table border = "2">
+
+        <tr > 
+            <td> <input type = "button" value ="clr" onclick="clr()"> </td>
+            <td colspan= "3"> <input type= "text" id="output"> </td>
+        </tr>
+        <tr>
+            <td><input type = "button" value=" 7 " onclick="display('7')"></td>
+            <td><input type = "button" value=" 8 " onclick="display('8')"></td>
+            <td><input type = "button" value=" 9 " onclick="display('9')"></td>
+            <td><input type = "button" value=" + " onclick="display('+')" id="operator"></td>
+
+        </tr>
+        <tr> 
+            <td><input type = "button" value=" 4 " onclick="display('4')"></td>
+            <td><input type = "button" value=" 5 " onclick="display('5')"></td>
+            <td><input type = "button" value=" 6 " onclick="display('6')"></td>
+            <td><input type = "button" value=" - " onclick="display('-')" id= "operator"></td>
+        </tr>
+        <tr>
+            <td><input type = "button" value=" 1 " onclick="display('1')"></td>
+            <td><input type = "button" value=" 2 " onclick="display('2')"></td>
+            <td><input type = "button" value=" 3 " onclick="display('3')"> </td>
+            <td><input type = "button" value=" * " onclick="display('*')" id="operator"></td>
+        </tr>
+        <tr>
+            <td><input type = "button" value=" 0 " onclick="display('0')"></td>
+            <td><input type = "button" value=" . " onclick="display('.')"></td>
+            <td><input type = "button" value=" / " onclick="display('/')" id="operator"> </td>
+            <td><input type = "button" value=" = " onclick="Evaluate()" id="calc"></td>
+        </tr>
+
+    </table>
+    </div>
+    <script>
+        // displays the clicked button on the screen 
+        function display(val) {
+            document.getElementById('output').value += val;
+            
+        }
+        function Evaluate(){
+            let x=  document.getElementById('output').value;
+            // evaluating the expression using Function keyword 
+            let y = Function('return '+ x)();
+            document.getElementById('output').value = y;
+  
+        }
+        // clears the screen
+        function clr(){
+            document.getElementById('output').value = '';
+
+        }
+    </script>
+</body>
+
+</html>
