@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<style>
+    *{
+        margin:0px;
+        box-sizing: border-box;
+    }
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        min-height: 100vh;
+        min-width: 100vw;
+        background:rgb(89, 197, 221);
+    }
+    .innerContainer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+        border-radius: 50%;
+        padding: 5%;
+        background:rgb(83, 215, 219);
+        border: none;
+    }
+    body{
+        font-family:'Lora', "Serif"
+    }
+    .title{
+        font-size: 2rem;
+        font-weight: 600;
+    }
+    .timer{
+        display: flex;
+        margin-top: 20px;
+        font-size: 1.5rem;
+        background-color: red;
+        padding: 6px 20px;
+        color: white;
+        
+    }
+    .buttons{
+        padding: 20px;
+    }
+    .start,.stop,.reset{
+        padding: 10px;
+        margin: 10px;
+        font-size: 1.2rem;
+        border-radius:15px;
+        border: none;
+        background-color: rgb(20, 190, 71);
+        text-transform: uppercase;
+        font-weight: 800;
+
+    }
+    .start:hover, .stop:hover, .reset:hover{
+        transform: scale(1.03);
+        background-color: whitesmoke;
+        color: rgb(2, 54, 2);  
+        font-weight: 800;
+        }
+</style>
+    </head>
+    <body>
+<div class="container">
+    <div class="innerContainer">
+    <div class="title">STOP WATCH</div>
+    <div class="timer">
+        <div class="minute">00</div>:
+        <div class="second">00</div>:
+        <div class="millisecond">00</div>
+    </div>
+    <div class="buttons">
+        <button class="start">Start</button>
+        <button class="stop">Stop</button>
+        <button class="reset">Reset</button>
+    </div>
+    </div>
+</div>
+
+        <script>
+            let minute = 00;
+            let second = 00;
+            let millisecond = 00;
+            let min = document.querySelector(".minute");
+            let sec = document.querySelector(".second");
+            let msec = document.querySelector(".millisecond");
+            let interval;
+            let start = document.querySelector(".start");
+            let stop = document.querySelector(".stop");
+            let reset = document.querySelector(".reset");
+            start.onclick = function(){
+                clearInterval(interval);
+                interval = setInterval(startTimer, 10);
+            }
+            stop.onclick = function(){
+                clearInterval(interval);
+
+            }
+            reset.onclick = function(){
+                clearInterval(interval);
+                minute = '00';
+                second = '00';
+                millisecond = '00';
+                min.innerHTML = minute;
+                sec.innerHTML = second;
+                msec.innerHTML = millisecond;
+            }
+          function startTimer(){
+              millisecond++;
+              if(millisecond <=9){
+                  msec.innerHTML = "0" + millisecond;
+              }
+              if(millisecond >9){
+                  msec.innerHTML = millisecond;
+              }
+              if(millisecond >99){
+                  second++;
+                  sec.innerHTML = "0" + second;
+                  millisecond = 00;
+                  msec.innerHTML = millisecond;
+              }
+              if(second> 9){
+                  sec.innerHTML = second;
+              }
+              if(second > 59){
+                  minute++;
+                  min.innerHTML = '0' + minute;
+                  second = 00;
+                  sec.innerHTML = second;
+              }
+              if(minute > 9 ){
+                  min.innerHTML = minute;
+              }
+          }
+        
+
+            </script>
+    </body>
+
+</html>
